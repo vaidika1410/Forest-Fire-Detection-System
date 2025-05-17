@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2, h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Prediction Results</h2>
+        <p>Welcome, {{ username }}</p>
+    </header>
+
+    <div class="container">
+        <h3>Recent Predictions</h3>
+
+        {% if results %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Prediction</th>
+                        <th>Confidence</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                        <tr>
+                            <td>{{ result.filename }}</td>
+                            <td>{{ result.prediction }}</td>
+                            <td>{{ result.confidence }}</td>
+                            <td>{{ result.time }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No results yet.</p>
+        {% endif %}
+
+        <a class="back-btn" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+    </div>
+
+
+
+    <script>
+    // This forces the page to reload if served from cache
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+</script>
+
+</body>
+</html>
