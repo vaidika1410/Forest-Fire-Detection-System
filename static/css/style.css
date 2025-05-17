@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f6f8;
+    color: #333;
+  }
+  
+  .dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background-color: #2e2e2e;
+    color: #fff;
+    width: 220px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .sidebar h2 {
+    font-weight: 600;
+  }
+  
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .sidebar a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #fff;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .username {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+    color: #ccc;
+  }
+  
+
+
+  
+  /* Main */
+  .main {
+    flex: 1;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+  
+  .card h3 {
+    margin-bottom: 12px;
+  }
+  
+  .card input[type="file"] {
+    margin-bottom: 12px;
+  }
+  
+  .card button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    background-color: #e84343;
+  }
+  
+  .result-text {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
