@@ -38,7 +38,7 @@ This is a web application that uses a deep learning model to detect forest fires
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/Forest_Fire_Detection_System.git
+   git clone https://github.com/vaidika1410/Forest_Fire_Detection_System.git
    cd Forest_Fire_Detection_System
 
 ## Contact
